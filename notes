@@ -1,0 +1,22 @@
+
+SELECT col_name1, col_name2
+FROM DB.table_Name 
+WHERE col_Name = 'value' 
+AND condition2
+ORDER BY col_N, colN2 ASC
+
+INSERT INTO DB.table_N (col_N)
+VALUES ('value')
+
+update set where
+delete where
+
+select from limit
+select from where	 like
+			in
+			between val1 AND val2
+select from 	INNER ON
+		LEFT ON
+IF EXISTS (select from where)
+BEGIN ... END
+ELSE.... END
