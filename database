@@ -1,0 +1,15 @@
+CREATE DATABASE folder_N;
+use table_N;
+CREATE TABLE table_N ( a INT, b TEXT );
+INSERT INTO table_N VALUES ( 1, 'val' )
+ENGINE=InnoDB DEFAULT CHARSET=utf8;
+SELECT * FROM table_N
+
+
+>>>>>>>
+DBMS = database engine = database server;
+
+
+You notice, our collation is now utf8_general-ci, which is a more reasonable default, actually. So, it's a good idea to always specify the database engine and the default character set. The database engine defaults to InnoDB for MySQL 5.5 and later. InnoDB versus MyISAM which is the original database engine for MySQL. MyISAM is not transactional, it's not very fast for large data sets.
+
+

@@ -1,0 +1,33 @@
+SELECT Name, Continent, Population FROM Country WHERE
+  Name LIKE '_a%' OR
+  Name LIKE '_b%' OR
+  Name LIKE '_c%' OR
+  Name LIKE '_d%' OR
+  Name LIKE '_e%'
+  ORDER BY Name;
+
+>> can be replaced by REGEXP >>
+SELECT Name, Continent, Population FROM Country WHERE Name REGEXP '^.[a-e].*' ORDER BY Name;
+
+
+>>> 	+ plus:  one or more
+	?  question mark is zero or one
+	* asterisk is zero or more.
+	^ anchor all character
+	
+
++ (plus) >>  match anything with one or more C's between two O's.
+>> for REGEXP 'oc+o' 
+ANS: Cocos, Morocco
+HERE: OCO, OCCO
+
+To matches zero or more of a particular character:
+* (asterisk) >>  any two Os next to each other or any two Os with one or more Cs in between them.
+>> for REGEXP 'oc*o'
+ANS:Cameroon, Cocos, Morocco
+HERE: OO, OCO, OCCO
+
+TO matches zero or one of a character:
+?  REGEXP 'oc?o'
+ANS: cook -  here, c is void for OO
+

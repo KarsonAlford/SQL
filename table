@@ -1,0 +1,7 @@
+CREATE TABLE test ( a INT, b TEXT, c TEXT );
+INSERT INTO test VALUES ( 1, 'This', 'Right here!' ); 
+SELECT * FROM test;
+
+>> for corrections specify condition properly
+UPDATE test SET c = 'Extra funny.' WHERE a = 2;
+
