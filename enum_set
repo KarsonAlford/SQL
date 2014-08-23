@@ -1,0 +1,44 @@
+Enum and set :
+
+DROP TABLE IF EXISTS test;
+CREATE TABLE test (
+  id SERIAL,
+  a SET( 'Pablo', 'Henri', 'Jackson' )
+);
+INSERT INTO test ( a ) VALUES ( 'Pablo' );
+INSERT INTO test ( a ) VALUES ( 'Henri' );
+INSERT INTO test ( a ) VALUES ( 'Jackson' );
+INSERT INTO test ( a ) VALUES ( 'Pablo,Jackson,Henri,Henri,Henri' );
+INSERT INTO test ( a ) VALUES ( 1 );
+INSERT INTO test ( a ) VALUES ( 2 );
+INSERT INTO test ( a ) VALUES ( 3 );
+INSERT INTO test ( a ) VALUES ( 4 );
+INSERT INTO test ( a ) VALUES ( 5 );
+INSERT INTO test ( a ) VALUES ( 6 );
+INSERT INTO test ( a ) VALUES ( 7 );
+SELECT COUNT(*) FROM test;
+SELECT * FROM test;
+DESCRIBE test;
+SHOW CREATE TABLE test;
+
+
+ENUM works from a list of strings, and the column can hold in each row one of these strings in the list.
+
+
+>> explantion for result from id 5 to 6 >>>
+
+we have is a one is Pablo. Two is on Henri. Three is both of those first two bits set, and so that's Pablo and Henri. Four is just that third bit set. And that's Jackson. Five, the first and the third bit. Six, the second and the third bit. And seven, all three bits are set. So each bit represents one of these strings. That's the distinction between SET and ENUM.
+
+id	a
+1	Pablo
+2	Henri
+3	Jackson
+4	Pablo,Henri,Jackson
+5	Pablo
+6	Henri
+7	Jackson
+8	Pablo,Henri
+9	Pablo,Jackson
+10	Henri,Jackson
+11	Pablo,Henri,Jackson
+
